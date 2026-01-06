@@ -1,6 +1,6 @@
-# pulseassociatessoftwarehouse
+# Pulse Associates Software House
 Pulse Associates is a dynamic technology firm dedicated to delivering high-impact digital solutions and strategic consultancy. Specializing in custom software development, mobile applications, and web-enabled platforms, the company empowers businesses to thrive in a digital-first economy.
-# Project Installation and Setup Guide (Step-by-Step Explanation)
+# Project Installation and Setup Guide 
   ## Step 1: Install XAMPP
     First, download and install XAMPP on your computer.
     XAMPP is a local server that provides Apache (for running PHP files) and MySQL (for database).
@@ -23,6 +23,7 @@ Pulse Associates is a dynamic technology firm dedicated to delivering high-impac
     Right-click on the file
     Click Extract Here or Extract All
     After extraction, you will see a project folder.
+    After extraction, cut the folder name as "Database File MySql" because this folder is used only for database.
   
   ## Step 5: Rename the Project Folder
     Rename the extracted folder to Project1.
