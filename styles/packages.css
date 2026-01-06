@@ -1,0 +1,298 @@
+/* --- Color Variables --- */
+:root {
+    --primary-blue: #0A1931;    /* Dark Blue */
+    --secondary-blue: #1C3358;  /* Slightly Lighter Blue */
+    --accent-yellow: #FFC94A;   /* Yellow */
+    --text-dark: #FFFFFF;
+    --text-light: #333333;
+    --bg-light: #F4F7F9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+/* --- Page Structure --- */
+.page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header-section h1 {
+    font-size: 2.8em;
+    color: var(--primary-blue);
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.header-section p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* --- Main Content Split Layout --- */
+.content-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.main-details {
+    flex: 3; /* Takes up larger portion of the width */
+    background-color: var(--text-dark);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-summary {
+    flex: 1; /* Smaller sidebar */
+    position: sticky;
+    top: 20px; /* Sticks the summary block near the top */
+}
+
+/* --- Detailed Deliverables Section --- */
+.deliverables h3 {
+    font-size: 1.8em;
+    color: var(--secondary-blue);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--bg-light);
+}
+
+.deliverables ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.deliverables li {
+    font-size: 1em;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+.deliverables li i {
+    color: #38C76D; /* Green checkmark for positive focus */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* --- The Process/Timeline Section --- */
+.process-timeline {
+    margin-top: 50px;
+}
+
+.process-timeline h3 {
+    border-bottom: 2px solid var(--bg-light);
+}
+
+.timeline-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-steps::before {
+    content: '';
+    position: absolute;
+    top: 55px;
+    left: 5%;
+    right: 5%;
+    height: 3px;
+    background-color: var(--accent-yellow);
+    z-index: 0;
+}
+
+.step {
+    width: 20%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-icon {
+    background-color: var(--primary-blue);
+    color: var(--accent-yellow);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    margin: 0 auto 10px;
+    border: 5px solid var(--text-dark); /* White ring */
+}
+
+.step h5 {
+    margin-top: 5px;
+    font-size: 1em;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.step p {
+    font-size: 0.85em;
+    color: #777;
+}
+
+
+/* --- Sidebar Summary & CTA --- */
+.summary-card {
+    background-color: var(--text-dark);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid var(--accent-yellow);
+}
+
+.summary-card h4 {
+    font-size: 1.6em;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.price-tag {
+    font-size: 3em;
+    color: var(--primary-blue);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.price-tag span {
+    font-size: 0.5em;
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+.summary-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--bg-light);
+    font-size: 0.95em;
+}
+
+.summary-list li:last-child {
+    border-bottom: none;
+}
+
+.summary-list li i {
+    color: var(--accent-yellow);
+    margin-right: 5px;
+}
+
+/* Call-to-Action Button */
+.btn-cta {
+    display: block;
+    width: 87%;
+    height: 87%;
+    padding: 10px;
+    margin-top: 10px;
+    
+    background-color: var(--accent-yellow);
+    color: var(--primary-blue);
+    text-align: center;
+    font-size: 85%;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 201, 74, 0.4);
+}
+
+.btn-cta:hover {
+    background-color: #F8B500;
+    transform: translateY(-2px);
+}
+
+/* --- Section F: What's NOT Included --- */
+.not-included-box {
+    margin-top: 40px;
+    background-color: #FFEEEC; /* Light Red/Warning Color */
+    border-left: 5px solid #E57373;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.not-included-box h4 {
+    color: #C62828;
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.not-included-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.not-included-box li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: var(--text-light);
+}
+
+.not-included-box li i {
+    color: #E57373;
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 1100px) {
+    .content-layout {
+        flex-direction: column;
+    }
+    .sidebar-summary {
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .deliverables ul {
+        grid-template-columns: 1fr;
+    }
+    .timeline-steps {
+        flex-direction: column;
+        padding: 0;
+        margin-top: 20px;
+    }
+    .timeline-steps::before {
+        left: 25px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        height: 100%;
+    }
+    .step {
+        width: 100%;
+        text-align: left;
+        padding-left: 50px;
+        margin-bottom: 25px;
+    }
+    .step-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}

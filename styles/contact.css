@@ -1,0 +1,233 @@
+/* CSS is included here */
+:root {
+    --primary-blue: #0A1931; /* Dark Blue */
+    --accent-yellow: #FFC94A; /* Yellow Accent */
+    --light-bg: #F8F8F8;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --form-bg: #FFFFFF;
+    --input-border: #E0E0E0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.contact-section {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 50%, var(--accent-yellow) 50%);
+    opacity: 0.2;
+    transform: skewX(-20deg) translateX(50px);
+}
+
+.contact-section h1 {
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--form-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2, .contact-form h2 {
+    font-size: 2em;
+    color: var(--primary-blue);
+    margin-top: 0;
+}
+
+.contact-info p {
+    margin-bottom: 30px;
+    color: var(--text-dark);
+    color: #333;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.info-icon {
+    color: var(--accent-yellow);
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.info-details strong {
+    display: block;
+    font-size: 1.1em;
+    color: var(--primary-blue);
+}
+.info-details {
+    color: #333; /* or var(--text-dark) */
+    font-size: 0.95em;
+    margin-top: 3px;
+}
+
+
+.contact-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    grid-column: span 1;
+    
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    color: #333;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--accent-yellow);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+button.submit-btn {
+    grid-column: span 2;
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button.submit-btn:hover {
+    background-color: #051021; /* Slightly darker blue */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-form form {
+        grid-template-columns: 1fr;
+    }
+    .form-group {
+        grid-column: span 1;
+    }
+    button.submit-btn {
+        grid-column: span 1;
+    }
+}
+
+/* ====================================================================== */
+/* 5. Section Separator & Connector Styling (For Animation/UX) */
+/* ====================================================================== */
+
+.section-separator {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    width: 100%;
+}
+
+.logo-connector {
+    width: 50px;
+    height: 50px;
+    margin-bottom: auto;
+    background-color: #5C67FF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(92, 103, 255, 0.4);
+    
+    /* 1. INITIAL STATE: Scale down and rotate slightly */
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+/* 2. ANIMATED STATE: Added by JavaScript */
+.logo-connector.is-scrolled {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+    background-color: #4853e5;
+}
+
+.logo-connector i {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.5s ease;
+}
+
+.logo-connector.is-scrolled i {
+    transform: scale(1.2);
+}
